@@ -1,6 +1,7 @@
 package com.example.house_services.models;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 
 import com.example.house_services.repositories.RepairTeamRepository;
 
@@ -12,15 +13,15 @@ import lombok.Data;
 @Table(name = "requests")
 public class Request extends BaseEntity {
     @Column (name = "creatingDate",nullable = false)
-    private Date creatingDate;
+    private LocalDateTime creatingDate;
     @Column (name = "progressDate")
-    private Date progressDate;
+    private LocalDateTime progressDate;
     @Column (name = "closeDate")
-    private Date closeDate;
+    private LocalDateTime closeDate;
     @Column (name = "description",nullable = false)
     private String description;
     @Column(name="status", nullable=false)
-    private String status;
+    private RequestStatus status;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "operator_id")  // Столбец в таблице requests

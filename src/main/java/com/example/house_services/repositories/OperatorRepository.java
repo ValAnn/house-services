@@ -11,4 +11,6 @@ import org.springframework.stereotype.Repository;
 public interface OperatorRepository extends JpaRepository<Operator, Long> {
     // Поиск по ФИО (с игнорированием регистра)
     List<Operator> findByFullNameContainingIgnoreCase(String namePart);
+
+    boolean existsByEmail(String email);
 }
