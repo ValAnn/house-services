@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.*;
 
 import com.example.house_services.repositories.UserRepository;
 import com.example.house_services.models.User;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @RestController
 @RequestMapping("/api/users")
@@ -22,4 +25,7 @@ public class UserController {
     public User create(@RequestBody User user) {
         return userRepo.save(user);
     }
+
+    
+    
 }
