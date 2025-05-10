@@ -46,4 +46,6 @@ public class OperatorService {
     public List<Operator> searchOperatorsByName(String namePart) {
         return operatorRepository.findByFullNameContainingIgnoreCase(namePart);
     }
+
+    
 }

@@ -10,6 +10,7 @@ import lombok.AllArgsConstructor;
 public class TenantDto {
     private Long id;
     private String email;
+    private String password;
     private String phoneNumber;
     private String fullName;
     private String passportNumber;

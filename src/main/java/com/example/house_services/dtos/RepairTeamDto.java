@@ -9,5 +9,6 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class RepairTeamDto {
     private Long id;
+    private String password;
     private String teamNumber;
 }

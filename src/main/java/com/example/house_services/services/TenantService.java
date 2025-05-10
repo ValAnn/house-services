@@ -26,6 +26,10 @@ public class TenantService {
                 .orElseThrow(() -> new RuntimeException("Tenant not found with id: " + id));
     }
 
+    public List<Tenant> getAllTenants() {
+        return tenantRepository.findAll();
+    }
+
     public List<Tenant> getTenantsByRegistrationAddress(String address) {
         return tenantRepository.findByRegistrationAddressContainingIgnoreCase(address);
     }

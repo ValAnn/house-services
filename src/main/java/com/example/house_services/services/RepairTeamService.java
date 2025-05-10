@@ -16,17 +16,21 @@ public class RepairTeamService {
     private final RepairTeamRepository repairTeamRepository;
     private final RequestService requestService;
 
-    public RepairTeam createTeam(RepairTeam team) {
+    public RepairTeam createRepairTeam(RepairTeam team) {
         return repairTeamRepository.save(team);
     }
 
-    public RepairTeam getTeamById(Long id) {
+    public RepairTeam getRepairTeamById(Long id) {
         return repairTeamRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Repair team not found with id: " + id));
     }
 
+    public List<RepairTeam> getAllRepairTeams(){
+        return repairTeamRepository.findAll();
+    }
+
     public RepairTeam assignToRequest(Long teamId, Long requestId) {
-        RepairTeam team = getTeamById(teamId);
+        RepairTeam team = getRepairTeamById(teamId);
         Request request = requestService.getRequestById(requestId);
         // team.getRequests().add(request);
         return repairTeamRepository.save(team);
